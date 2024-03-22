@@ -30,12 +30,10 @@ const productSchema = new Schema<TProduct>(
       min: 0,
       default: 0,
     },
-    images: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
+    images: {
+      type: String,
+      required: true,
+    },
     brand: {
       type: String,
       required: true,

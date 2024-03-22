@@ -11,7 +11,7 @@ export type TProduct = {
   price: number;
   categories: string[];
   stockQuantity: number;
-  images: string[];
+  images: string;
   brand: string;
   ratings: number;
   reviews: Review[];

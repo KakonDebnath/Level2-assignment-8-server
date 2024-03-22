@@ -8,4 +8,4 @@ router.get('/:serviceId', ProductControllers.getSingleProductFromDB);
 router.patch('/:serviceId', ProductControllers.updateProductIntoDB);
 router.delete('/:serviceId', ProductControllers.deleteProductFromDB);
 
-export const ServiceRoutes = router;
+export const ProductRoutes = router;

@@ -3,26 +3,79 @@ import { TProduct } from './product.interfaces';
 
 const productSchema = new Schema<TProduct>(
   {
-    title: {
+    name: {
       type: String,
       required: true,
-      unique: true,
+      trim: true,
     },
     description: {
       type: String,
       required: true,
+      trim: true,
     },
-    imageLink: {
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    categories: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    stockQuantity: {
+      type: Number,
+      required: true,
+      min: 0,
+      default: 0,
+    },
+    images: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    brand: {
       type: String,
       required: true,
+      trim: true,
     },
-    details: {
-      type: [String],
-      required: true,
+    ratings: {
+      type: Number,
+      default: 0,
+      min: 0,
+      max: 5,
+    },
+    reviews: [
+      {
+        reviewer: {
+          type: String,
+          required: true,
+        },
+        comment: {
+          type: String,
+          required: true,
+        },
+        rating: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 5,
+        },
+        reviewDate: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
+    isActive: {
+      type: Boolean,
+      default: true,
     },
     isDeleted: {
       type: Boolean,
-      required: true,
+      default: false,
     },
   },
   {

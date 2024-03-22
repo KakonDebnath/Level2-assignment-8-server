@@ -6,14 +6,7 @@ import Product from './product.model';
 
 // Create a new Service into Mongodb Database
 const createProductIntoDB = async (payload: TProduct) => {
-  const isDeleted = false;
-
-  const newPayload = {
-    ...payload,
-    isDeleted,
-  };
-
-  const result = await Product.create(newPayload);
+  const result = await Product.create(payload);
   return result;
 };
 

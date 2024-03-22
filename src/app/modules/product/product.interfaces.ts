@@ -1,7 +1,20 @@
+type Review = {
+  reviewer: string;
+  comment: string;
+  rating: number;
+  reviewDate: Date;
+};
+
 export type TProduct = {
-  title: string;
-  details: string | string[];
-  imageLink: string;
+  name: string;
   description: string;
-  isDeleted: boolean;
+  price: number;
+  categories: string[];
+  stockQuantity: number;
+  images: string[];
+  brand: string;
+  ratings: number;
+  reviews: Review[];
+  isActive?: boolean;
+  isDeleted?: boolean;
 };

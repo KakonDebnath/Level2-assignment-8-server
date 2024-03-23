@@ -34,7 +34,7 @@ const getSingleProductFromDB = catchAsync(async (req, res) => {
 
 const updateProductIntoDB = catchAsync(async (req, res) => {
   const result = await ProductServices.updateProductIntoDB(
-    req.params.serviceId,
+    req.params.productId,
     req.body,
   );
   sendResponse(res, {
@@ -45,7 +45,7 @@ const updateProductIntoDB = catchAsync(async (req, res) => {
 });
 const deleteProductFromDB = catchAsync(async (req, res) => {
   const result = await ProductServices.deleteProductFromDB(
-    req.params.serviceId,
+    req.params.productId,
   );
   sendResponse(res, {
     statusCode: httpStatus.OK,

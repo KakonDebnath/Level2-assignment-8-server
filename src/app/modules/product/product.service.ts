@@ -4,13 +4,13 @@ import { TProduct } from './product.interfaces';
 
 import Product from './product.model';
 
-// Create a new Service into Mongodb Database
+// Create a new product into Mongodb Database
 const createProductIntoDB = async (payload: TProduct) => {
   const result = await Product.create(payload);
   return result;
 };
 
-// Get all Services from the database
+// Get all Products from the database
 const getAllProductFromDB = async () => {
   const result = await Product.find();
   if (!result.length) {
@@ -21,7 +21,7 @@ const getAllProductFromDB = async () => {
   return result;
 };
 
-// get single Service from the database by id
+// get single Product from the database by id
 const getSingleProductFromDB = async (id: string) => {
   const result = await Product.findById(id);
 
@@ -34,7 +34,7 @@ const getSingleProductFromDB = async (id: string) => {
   return result;
 };
 
-// update single Service using id
+// update single Product using id
 
 const updateProductIntoDB = async (id: string, payload: Partial<TProduct>) => {
   const findingData = await Product.findById(id);
@@ -52,6 +52,7 @@ const updateProductIntoDB = async (id: string, payload: Partial<TProduct>) => {
   return result;
 };
 
+//delete product from Database by id
 const deleteProductFromDB = async (id: string) => {
   const result = await Product.findByIdAndUpdate(
     id,
